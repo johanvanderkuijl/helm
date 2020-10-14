@@ -1,13 +1,13 @@
 apiVersion: gatemin.io/v1alpha1
 kind: IngressGate
 metadata:
-  name: {{ template "helm-guestbook.fullname" . }}
+  name: {{ template "mailhog.fullname" . }}
 spec:
-  host: helm-guestbook.apps.ocp-prd.alliander.com
+  host: mailhog-ot-it4ot-dev.apps.ocp-prd.alliander.com
   auth:
     type: NONE
   services:
     - backend:
-        serviceName: {{ template "helm-guestbook.fullname" . }}
+        serviceName: {{ template "mailhog.fullname" . }}
         servicePort: {{ .Values.service.port }}
       path: /
