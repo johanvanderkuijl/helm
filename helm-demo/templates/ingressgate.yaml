@@ -1,0 +1,13 @@
+apiVersion: gatemin.io/v1alpha1
+kind: IngressGate
+metadata:
+  name: {{ include "helm-demo.fullname" . }}
+spec:
+    host: {{ .Values.ingressgate.host | quote }}
+    auth:
+      type: NONE
+    services:
+      - backend:
+          serviceName: {{ include "helm-demo.fullname" . }}
+          servicePort: {{ .Values.service.port }}
+        path: /
