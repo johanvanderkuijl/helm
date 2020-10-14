@@ -3,4 +3,4 @@ kind: ConfigMap
 metadata:
   name: {{ .Release.Name }}-configmap
 data:
-  myvalue: "Hello World2"
+  myvalue: "Hello World 000"
