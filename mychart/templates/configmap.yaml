@@ -4,3 +4,4 @@ metadata:
   name: {{ .Release.Name }}-configmap
 data:
   myvalue: "Hello World 000"
+  value2: {{ .Chart.Description }} #  the description in Chart.yaml
