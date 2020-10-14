@@ -4,5 +4,7 @@ metadata:
   name: {{ .Release.Name }}-configmap
 data:
   myvalue: "Hello World 000"
-  description: {{ .Chart.Description | quote }} #  the description in Chart.yaml
-  description_no_quotes: {{ .Chart.Description }} #  the description in Chart.yaml
+  description_no_quotes: {{ .Chart.Description }}
+  filename: {{ .Files.Get "demo.txt" }}
+  filenameb64: {{ .Files.Get "demo.txt" | b64enc }}
+  drink: {{ .Values.favoriteDrink }}
