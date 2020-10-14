@@ -9,5 +9,5 @@ spec:
   services:
     - backend:
         serviceName: {{ template "helm-guestbook.fullname" . }}
-        servicePort: {{ .Values.service.port }}
+        servicePort: {{ .Values.service.port.http }}
       path: /
